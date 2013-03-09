@@ -1,7 +1,20 @@
+set nocompatible
 filetype off
 
-call pathogen#infect() 
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
 
@@ -16,8 +29,12 @@ set autoindent
 set expandtab
 set nobackup
 set noswapfile
+set laststatus=2
+set fileformat=unix
+set ignorecase  "case insensitive searching
+set smartcase   "become case sensitive if upper case char entered
 
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+"autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 nnoremap <F5> :GundoToggle<CR>
 
